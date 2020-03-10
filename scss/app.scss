@@ -1,0 +1,9 @@
+$primary-color: blue;
+
+$body-size: 18px;
+
+body {
+    background-color: $primary-color;
+    color: #ffffff;
+    font-size: $body-size;
+}
