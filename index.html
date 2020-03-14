@@ -46,51 +46,27 @@
     </section>
     <section class="categories">
         <div class="container">
-            <a href="#">All courses</a>
-            <a href="#">Tax</a>
-            <a href="#">Communication</a>
-            <a href="#">Tehnology</a>
+            <a class="filterBtn active" href="#" onclick="filterSelection('all')">All courses</a>
+            <a class="filterBtn" href="#" onclick="filterSelection('tax')">Tax</a>
+            <a class="filterBtn" href="#" onclick="filterSelection('communication')">Communication</a>
+            <a class="filterBtn" href="#" onclick="filterSelection('technology')">Tehnology</a>
         </div>
     </section>
     <section class="content">
         <div class="container">
             <div class="articles">
-                <div class="single-article">
+                <!--    <div class="single-article">
                     <img src="img/tax.png" alt="">
                     <div>
-                        <h3>Quisque eleifend odio ut leo tincidunt vehicula</h3>
-                        <p>
+                        <h3 id="title">Quisque eleifend odio ut leo tincidunt vehicula</h3>
+                        <p id="description">
                             Donec vestibulum magna congue placerat accumsan. Vestibulum eget massa velit. Phasellus
                             ullamcorper luctus nisi, ac
                             elementum lorem tincidunt at. Phasellus rhoncus nunc sapien, vel rhoncus mi sodales a.
                         </p>
-                        <p>Price: £50</p>
+                        <p>Price:<span id="price"></span></p>
                     </div>
-                </div>
-                <div class="single-article">
-                    <img src="img/tax.png" alt="">
-                    <div>
-                        <h3>Quisque eleifend odio ut leo tincidunt vehicula</h3>
-                        <p>
-                            Donec vestibulum magna congue placerat accumsan. Vestibulum eget massa velit. Phasellus
-                            ullamcorper luctus nisi, ac
-                            elementum lorem tincidunt at. Phasellus rhoncus nunc sapien, vel rhoncus mi sodales a.
-                        </p>
-                        <p>Price: £50</p>
-                    </div>
-                </div>
-                <div class="single-article">
-                    <img src="img/tax.png" alt="">
-                    <div>
-                        <h3>Quisque eleifend odio ut leo tincidunt vehicula</h3>
-                        <p>
-                            Donec vestibulum magna congue placerat accumsan. Vestibulum eget massa velit. Phasellus
-                            ullamcorper luctus nisi, ac
-                            elementum lorem tincidunt at. Phasellus rhoncus nunc sapien, vel rhoncus mi sodales a.
-                        </p>
-                        <p>Price: £50</p>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="menu">
                 <div class="list">
@@ -119,6 +95,9 @@
             </div>
         </div>
     </section>
+
+
 </body>
+<script src="/js/api.js"></script>
 
 </html>

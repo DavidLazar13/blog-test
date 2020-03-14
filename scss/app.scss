@@ -116,6 +116,8 @@ header {
 .single-article {
     display: flex;
     padding: 30px 30px;
+    display: none;
+    
 
     div {
         padding-left: 30px;
@@ -152,5 +154,17 @@ header {
         margin: 0 30px;
         padding: 61px 0 18px 0;
     }
+
+    a{
+        color: white;
+    }
 }
 
+.show {
+  display: flex;
+}
+
+.filterBtn.active {
+  background-color: #666;
+  color: white;
+}
