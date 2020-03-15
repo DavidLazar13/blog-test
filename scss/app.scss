@@ -1,4 +1,3 @@
-
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
@@ -15,29 +14,6 @@ $body-size: 18px;
         }
     }
 
-    // header {
-    //     background-color: #1C232E;
-        
-        
-    //     .wrap{
-    //         overflow: hidden;
-    //         display: flex;
-    //         justify-content: space-between;
-    //         align-items: center;
-    //         height: 70px;
-    //         margin: 0 30px;
-    //     }
-
-    //     .icon{
-    //         display: none;
-    //     }
-
-    //     .logo {
-    //         width: 199.83px;
-    //     }
-
-        
-    // }
 
     .navbar {
 
@@ -109,10 +85,10 @@ $body-size: 18px;
         margin-bottom: 10px;
     }
 
-    p{
-        font-size: 24px; 
-        margin-bottom: 27px;
-    }
+        p{
+            font-size: 24px; 
+            margin-bottom: 27px;
+        }
     }
 
     .btn {
@@ -182,6 +158,37 @@ $body-size: 18px;
         
         div {
             padding-left: 30px;
+        }
+
+        .thumbnail{
+            padding-left: 0;
+            width: 200px;
+            position: relative;
+
+            span{
+                padding: 4px;
+                font-size: 14px;
+                color: white;
+                position: absolute;
+                top: 117px;
+                left: 0;
+            }
+        }
+
+        .item-type-communication{
+            background-color: #EF7C00;
+        }
+
+        .item-type-tax{
+            background-color: #FF31C1;
+        }
+
+        .item-type-technology{
+            background-color: #99C736;
+        }
+
+        .description{
+            width: 80%;
         }
 
         h3 {
@@ -261,7 +268,7 @@ $body-size: 18px;
 
 
 
-        @media screen and (min-width: 600px) {
+    @media screen and (min-width: 600px) {
             .navbar {
                 display: flex;
                 justify-content: space-between;
@@ -299,6 +306,15 @@ $body-size: 18px;
             }
     
         }
+
+        .loadMoreButton{
+            text-align: center;
+        }
+
+        #loadMore{
+            margin: 69px 0 30px 0;
+        }
+
 
         //Mobile 
         @media only screen and (max-width: 600px) {
@@ -377,9 +393,29 @@ $body-size: 18px;
                     }
                 }
             }
+
+             .single-article{
+                .thumbnail{
+                    width: 100%;
+
+                    span{
+                    font-size: 16px;
+                    top: 50px;
+                    }
+                }
+
+                .description{
+                    width: 100%;
+                }
+            }
+
+            #loadMore{
+                margin: 0px 0 50px 0;
+            }
+
         }
 
-        //Mobile 
+        //Tablet 
         @media only screen and (max-width: 1024px) {
             .content{
                 .container{
@@ -395,7 +431,9 @@ $body-size: 18px;
                     margin-left: 0;
                 }
             }
+
         }
     
 
+        
 

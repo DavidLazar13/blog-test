@@ -176,6 +176,25 @@ body {
   display: none; }
   .single-article div {
     padding-left: 30px; }
+  .single-article .thumbnail {
+    padding-left: 0;
+    width: 200px;
+    position: relative; }
+    .single-article .thumbnail span {
+      padding: 4px;
+      font-size: 14px;
+      color: white;
+      position: absolute;
+      top: 117px;
+      left: 0; }
+  .single-article .item-type-communication {
+    background-color: #EF7C00; }
+  .single-article .item-type-tax {
+    background-color: #FF31C1; }
+  .single-article .item-type-technology {
+    background-color: #99C736; }
+  .single-article .description {
+    width: 80%; }
   .single-article h3 {
     margin-top: 5px; }
 
@@ -251,6 +270,12 @@ body {
   .nav-links:hover {
     color: white; } }
 
+.loadMoreButton {
+  text-align: center; }
+
+#loadMore {
+  margin: 69px 0 30px 0; }
+
 @media only screen and (max-width: 600px) {
   .navbar .btn {
     margin: 10px 20px; }
@@ -293,7 +318,16 @@ body {
     text-align: center;
     font-size: 14px; }
     .footer .wrap p {
-      padding-bottom: 44px; } }
+      padding-bottom: 44px; }
+  .single-article .thumbnail {
+    width: 100%; }
+    .single-article .thumbnail span {
+      font-size: 16px;
+      top: 50px; }
+  .single-article .description {
+    width: 100%; }
+  #loadMore {
+    margin: 0px 0 50px 0; } }
 
 @media only screen and (max-width: 1024px) {
   .content .container {

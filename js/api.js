@@ -1,34 +1,8 @@
 
-const courseSection = document.querySelector(".articles")
+const courseSection = document.querySelector(".articlesList")
+const loadMoreBtn = document.querySelector("#loadMore")
+let currentFilter = ''
 
-// let data = []
-
-// // load the data
-// fetch("https://learn.accountingcpd.net/ACPD/API/Test/SampleObject")
-//     .then(response => response.json())
-//     .then(jsonData => {
-//         data = jsonData
-//         getCourse()
-//     })
-
-// const getCourse = function () {
-//     if (data.length > 1) {
-
-
-//         const courseData = data
-//         // get a course
-//         //and put it inside
-//         courseTitle.innerHTML = courseData.title
-//         courseDescription.innerHTML = "lorem ipsum"
-//         coursePrice.innerHTML = "£50"
-
-//     }
-
-
-
-// }
-
-// getCourse()
 
 const grabData = function () {
     return fetch("https://learn.accountingcpd.net/ACPD/API/Test/SampleObject")
@@ -39,20 +13,23 @@ const grabData = function () {
         })
 }
 
+function getItems(items, currentPage) {
 
+    return items.filter((item, index) => {
+        return (index >= currentPage * 10) && (index < currentPage * 10 + 10)
+    })
 
-grabData().then(data => {
-    console.log(data)
+}
 
-    courseSection.innerHTML = ""
-
-    data.forEach((item) => {
+function showItems(items) {
+    items.forEach((item) => {
         courseSection.innerHTML = courseSection.innerHTML + `
             <div class="single-article ${item.type}" >
-                
+                <div class="thumbnail">
+                    <span class="item-type-${item.type}">${item.type.toUpperCase()}</span>
                     <img class="image" src="img/${item.imageSrc}" alt="${item.altText}">
-                
-                <div>
+                </div>
+                <div class="description">
                     <h3>${item.title}</h3>
                     <p>
                         ${item.description}
@@ -62,22 +39,46 @@ grabData().then(data => {
             </div>
         `
     })
-    filterSelection("all")
+}
+
+
+grabData().then(data => {
+
+    const totalItems = data.length;
+    const numberOfPages = Math.floor(totalItems / 10);
+    let currentPage = 0;
+
+    courseSection.innerHTML = ""
+
+    loadMoreBtn.addEventListener("click", () => {
+        currentPage = currentPage + 1
+        const items = getItems(data, currentPage)
+        showItems(items)
+        filterSelection()
+        if (currentPage === numberOfPages) {
+            loadMoreBtn.style.display = "none"
+        }
+    })
+
+    showItems(getItems(data, currentPage))
+
+    filterSelection()
 })
 
 
-
-function filterSelection(c) {
-
-    // document.getElementsByClassName("single-article").classList.add("show")
+function filterSelection() {
     var x, i;
     x = document.getElementsByClassName("single-article");
-    if (c == "all") c = "";
-    // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
     for (i = 0; i < x.length; i++) {
         RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+        if (x[i].className.indexOf(currentFilter) > -1) AddClass(x[i], "show");
     }
+}
+
+
+function setFilter(filterType) {
+    currentFilter = filterType
+    filterSelection()
 }
 
 

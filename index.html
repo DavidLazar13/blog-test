@@ -20,24 +20,6 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <!-- <header>
-        <div class="wrap" id="myTopnav">
-
-            <img class="logo" src="img/logoipsum.svg">
-
-            <div id="myLinks">
-                <button type="button" class="btn btn-full" href="#">
-                    Sign up
-                </button>
-                <button type="button" class="btn btn-outline" href="#">
-                    Log in
-                </button>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </header> -->
 
     <nav class="navbar">
         <span class="navbar-toggle" id="js-navbar-toggle">
@@ -66,27 +48,23 @@
     </section>
     <section class="categories">
         <div class="container">
-            <button class="filterBtn active" href="#" onclick="filterSelection('all')">All courses</button>
-            <button class="filterBtn" onclick="filterSelection('tax')">Tax</button>
-            <button class="filterBtn" onclick="filterSelection('communication')">Communication</button>
-            <button class="filterBtn" onclick="filterSelection('technology')">Tehnology</button>
+            <button class="filterBtn active" href="#" onclick="setFilter('')">All courses</button>
+            <button class="filterBtn" onclick="setFilter('tax')">Tax</button>
+            <button class="filterBtn" onclick="setFilter('communication')">Communication</button>
+            <button class="filterBtn" onclick="setFilter('technology')">Tehnology</button>
         </div>
     </section>
     <section class="content">
         <div class="container">
             <div class="articles">
-                <!--<div class="single-article">
-                    <img src="img/tax.png" alt="">
-                    <div>
-                        <h3 id="title">Quisque eleifend odio ut leo tincidunt vehicula</h3>
-                        <p id="description">
-                            Donec vestibulum magna congue placerat accumsan. Vestibulum eget massa velit. Phasellus
-                            ullamcorper luctus nisi, ac
-                            elementum lorem tincidunt at. Phasellus rhoncus nunc sapien, vel rhoncus mi sodales a.
-                        </p>
-                        <p>Price:<span id="price"></span></p>
-                    </div>
-                </div> -->
+                <div class="articlesList">
+
+                </div>
+                <div class="loadMoreButton">
+                    <button id="loadMore" type="button" class="btn btn-outline" href="#">
+                        Load more
+                    </button>
+                </div>
             </div>
             <div class="menu">
                 <a href="#">Navigation link</a>
