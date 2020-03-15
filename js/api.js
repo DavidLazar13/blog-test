@@ -49,22 +49,27 @@ grabData().then(data => {
     data.forEach((item) => {
         courseSection.innerHTML = courseSection.innerHTML + `
             <div class="single-article ${item.type}" >
-                <img src="img/${item.imageSrc}" alt="${item.altText}">
-                    <div>
-                        <h3>${item.title}</h3>
-                        <p>
-                            ${item.description}
-                        </p>
-                        <p>Price: £${item.price}</p>
-                    </div>
+                
+                    <img class="image" src="img/${item.imageSrc}" alt="${item.altText}">
+                
+                <div>
+                    <h3>${item.title}</h3>
+                    <p>
+                        ${item.description}
+                    </p>
+                    <p class="price"><strong>Price</strong>: £${item.price}</p>
                 </div>
+            </div>
         `
     })
-
+    filterSelection("all")
 })
 
-filterSelection("all")
+
+
 function filterSelection(c) {
+
+    // document.getElementsByClassName("single-article").classList.add("show")
     var x, i;
     x = document.getElementsByClassName("single-article");
     if (c == "all") c = "";
@@ -74,6 +79,7 @@ function filterSelection(c) {
         if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
     }
 }
+
 
 // Show filtered elements
 function AddClass(element, name) {
@@ -111,5 +117,20 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
 
 
+let mainNav = document.getElementById('js-menu');
+let navBarToggle = document.getElementById('js-navbar-toggle');
+
+navBarToggle.addEventListener('click', function () {
+    mainNav.classList.toggle('activeBurger');
+});

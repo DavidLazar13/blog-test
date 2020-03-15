@@ -13,27 +13,47 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
+    <script src="https://kit.fontawesome.com/a0c4512fc4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <header>
-        <div class="wrap">
+    <!-- <header>
+        <div class="wrap" id="myTopnav">
 
-            <img clas="logo" src="img/logoipsum.svg">
+            <img class="logo" src="img/logoipsum.svg">
 
-            <nav>
+            <div id="myLinks">
                 <button type="button" class="btn btn-full" href="#">
                     Sign up
                 </button>
                 <button type="button" class="btn btn-outline" href="#">
                     Log in
                 </button>
-            </nav>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
-    </header>
+    </header> -->
+
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="#"><img class="logo" src="img/logoipsum.svg"></a>
+        <ul class="main-nav" id="js-menu">
+            <button type="button" class="btn btn-full" href="#">
+                Sign up
+            </button>
+            <button type="button" class="btn btn-outline" href="#">
+                Log in
+            </button>
+        </ul>
+    </nav>
+
     <section class="hero">
         <div class="container">
             <div class="intro">
@@ -46,16 +66,16 @@
     </section>
     <section class="categories">
         <div class="container">
-            <a class="filterBtn active" href="#" onclick="filterSelection('all')">All courses</a>
-            <a class="filterBtn" href="#" onclick="filterSelection('tax')">Tax</a>
-            <a class="filterBtn" href="#" onclick="filterSelection('communication')">Communication</a>
-            <a class="filterBtn" href="#" onclick="filterSelection('technology')">Tehnology</a>
+            <button class="filterBtn active" href="#" onclick="filterSelection('all')">All courses</button>
+            <button class="filterBtn" onclick="filterSelection('tax')">Tax</button>
+            <button class="filterBtn" onclick="filterSelection('communication')">Communication</button>
+            <button class="filterBtn" onclick="filterSelection('technology')">Tehnology</button>
         </div>
     </section>
     <section class="content">
         <div class="container">
             <div class="articles">
-                <!--    <div class="single-article">
+                <!--<div class="single-article">
                     <img src="img/tax.png" alt="">
                     <div>
                         <h3 id="title">Quisque eleifend odio ut leo tincidunt vehicula</h3>
@@ -69,9 +89,6 @@
                 </div> -->
             </div>
             <div class="menu">
-                <div class="list">
-
-                </div>
                 <a href="#">Navigation link</a>
                 <a href="#">Navigation link</a>
                 <a href="#">Navigation link</a>
@@ -81,7 +98,7 @@
                 <a href="#">Navigation link</a>
                 <a href="#">Navigation link</a>
                 <a href="#">Navigation link</a>
-                <a href="#">Navigation link</a>
+                <a href="#">Special link</a>
             </div>
         </div>
     </section>
